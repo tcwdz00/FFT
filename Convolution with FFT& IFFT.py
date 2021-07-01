@@ -34,7 +34,8 @@ def IFFT(a):
 
 def poly_multiply(a,b):
     '''
-    with FFT and IFFT, perform polynomial multiplication for polynomials a,b of coefficent form.
+    with FFT and IFFT, perform polynomial multiplication for 
+    polynomials a,b of coefficent form in O(nlogn) time.
     equivalent to compute the convolution of vector a and b
     '''
     n=2**ceil(log2(len(a)+len(b)))
