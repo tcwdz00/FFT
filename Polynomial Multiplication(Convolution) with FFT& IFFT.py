@@ -21,8 +21,10 @@ def IFFT(a):
     return [e/len(a) for e in fast_poly_evaluate(a,0,len(a))]
 
 def poly_multiply(a,b):
-    a_sample=fast_poly_evaluate(a,1,len(a)+len(b))
-    b_sample=fast_poly_evaluate(b,1,len(a)+len(b))
-    c_sample=[a_sample[i]*b_sample[i] for i in range(len(a)+len(b))]
-    return [round(e.real) for e in IFFT(c_sample)]
+    n=2**ceil(log2(len(a)+len(b)))
+    a_sample=fast_poly_evaluate(a,1,n)
+    b_sample=fast_poly_evaluate(b,1,n)
+    c_sample=[a_sample[i]*b_sample[i] for i in range(n)]
+    return [round(e.real) for e in IFFT(c_sample)][:len(a)+len(b)-1]
+    
     
