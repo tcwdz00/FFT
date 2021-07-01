@@ -5,6 +5,7 @@ function description:
   fast_poly_evaluate(a,b,n):
     Evaluate polynomial  at nth roots of 1 using divide and conquer alg
     a: polynomial of coefficent form ex. polynomial 1+6*x+4*x^2+2*x^3 represented as a=[1,6,4,2]
+    b: using the roots of form e^(ijT/n) for j=0...n-1 if b evaluate to True, otherwise e^(-ijT/n)
     n: an integer that is power of 2
     return the results as a vector of length n
     
@@ -18,7 +19,7 @@ function description:
     
   poly_multiply(a,b):
     with FFT and IFFT, perform polynomial multiplication for polynomials a,b of coefficent form.
-    equivalent to compute convolution of vector a and b
+    equivalent to compute the convolution of vector a and b
     
     
    
